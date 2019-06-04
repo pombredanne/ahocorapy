@@ -1,3 +1,13 @@
+1.5.2
+-fixed long_description for pypi.org (use new markdown type)
+-declared python 3.7 compatibility
+
+1.5.1
+-improved pickling performance
+
+1.5.0
+-implemented non-recursive pickling (de-/serialization)
+
 1.4.2
 -fixed issue #2 (more false negatives) thx @maxtepkeev
 -improved test coverage

@@ -5,15 +5,11 @@ from os import path
 import os
 
 here = os.path.abspath(os.path.dirname(__file__))
-try:
-    import pypandoc
-    long_description = pypandoc.convert_file('README.md', 'rst')
-except:
-    with open(path.join(here, 'README.md')) as f:
-        long_description = f.read()
+
+with open(path.join(here, 'README.md')) as f:
+    long_description = f.read()
 
 from setuptools import setup, find_packages
-
 
 
 with open('%s/VERSION' % here) as f:
@@ -24,6 +20,7 @@ setup(
     author_email='fp@abusix.com',
     description='ahocorapy - Pure python ahocorasick implementation',
     long_description=long_description,
+    long_description_content_type="text/markdown",
     name='ahocorapy',
     packages=find_packages('src'),
     package_dir={'': 'src'},
@@ -46,6 +43,7 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
     ],
     keywords = ['keyword', 'search', 'purepython', 'aho-corasick', 'ahocorasick', 'abusix'],
     license='MIT',
